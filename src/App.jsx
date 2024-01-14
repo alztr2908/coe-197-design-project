@@ -1,11 +1,16 @@
 import { useState } from "react";
 import reactLogo from "./assets/react.svg";
+import "./App.css";
 
 function App() {
   return (
-    <div className="App">
-      <h1>Hello World</h1>
-    </div>
+    <>
+      <div className="App">
+        <div className="navbar"></div>
+        <div className="display"></div>
+      </div>
+      <div className="footer"></div>
+    </>
   );
 }
 
