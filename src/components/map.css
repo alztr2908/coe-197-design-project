@@ -8,6 +8,7 @@
 .building {
     height: 60%;
     display: flex;
+    position: relative;
 }
 
 .rec1 {
@@ -25,8 +26,8 @@
 .rec2::after{
     content: '';
     position: absolute;
-    top: 48.5%;
-    left: 26.5%;
+    top: 64%;
+    left: 35%;
     background-color: red;
     width: 60px;
     height: 10px;
@@ -44,14 +45,13 @@
     height: 10%;
 }
 
-.rec4::after{
+.rec4::before{
     content: '';
     position: absolute;
-    top: 26.5%;
-    left: 60.55%;
-    background-color: red;
-    width: 170px;
-    height: 10px;
+    top: 28px;
+    right: 0px;
+    border-top: 10px solid red;
+    border-right: 170px solid red;
 }
 
 .fence {
@@ -85,17 +85,64 @@
     content: '';
     position: absolute;
     bottom: 25px;
-    border-top: 10px solid #242424;;
+    border-top: 10px solid #242424;
     border-right: 132px solid #635D5D;
-    width: 0;
 }
 
 .oval {
-    position: absolute;
-    top: 38%;
-    left: 52%;
+    position: relative;
+    bottom: 210px;
+    left: 770px;
     width: 100px;
     height: 250px;
     background-color: #635D5D;
     border-radius: 45%;
-  }
+}
+
+.southwest-parking {
+    position: relative;
+    bottom: 182px;
+    /* left: 52%; */
+    width: 660px;
+    height: 87px;
+    border: 1px solid red;
+    display: flex;
+}
+
+.northwest-parking {
+    position: relative;
+    bottom: 450px;
+    left: 450px;
+    width: 115.5px;
+    height: 87px;
+    border: 1px solid red;
+    display: flex; 
+}
+
+.east-parking {
+    position: relative;
+    bottom: 870px;
+    left: 960px;
+    width: 87px;
+    height: 388px;
+    border: 1px solid red;
+}
+
+.west-parking {
+    position: relative;
+    bottom: 675px;
+    left: 580px;
+    width: 87px;
+    height: 194px;
+    border: 1px solid red;
+}
+
+.s1{
+    width: 38.8px;
+    border: 1px solid yellow;
+}
+
+.s4{
+    height: 38.8px;
+    border: 1px solid yellow;
+}

@@ -12,12 +12,13 @@ const map = () => {
       <div className="fence">
         <span className="long-fence"></span>
         <span className="entrance-exit"></span>
-        <span className="short-fence">
-          <span className="s1"></span>
-          <span className="s2"></span>
-        </span>
+        <span className="short-fence"></span>
       </div>
       <div className="oval"></div>
+      <div className="southwest-parking"></div>
+      <div className="northwest-parking"></div>
+      <div className="west-parking"></div>
+      <div className="east-parking"></div>
     </div>
   );
 };
