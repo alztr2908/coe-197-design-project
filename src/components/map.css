@@ -1,0 +1,43 @@
+.map-bg {
+    border: 1px solid white;
+    width: 1100px;
+    height: 500px;
+    margin-right: 1em;
+}
+
+.fence {
+    height: 20px;
+    position: relative;
+    top: 96%;
+    display: flex;
+    /* justify-content: end; */
+    align-items: end;
+}
+
+.long-fence {
+    background-color: #635D5D;
+    width: 55%;
+    /* float: bottom; */
+    height: 100%;
+}
+
+.entrance-exit {
+    background-color: red;
+    width: 30%;
+    height: 50%;
+}
+
+.short-fence {
+    background-color: #635D5D;
+    height: 130%;
+    width: 15%;
+}
+
+.short-fence::before {
+    content: '';
+    position: absolute;
+    bottom: 25px;
+    border-top: 10px solid #242424;;
+    border-right: 159px solid #635D5D;
+    width: 0;
+}

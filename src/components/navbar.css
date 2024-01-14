@@ -28,7 +28,3 @@ li {
     cursor: pointer;
     font-weight: 300;
 }
-
-li:hover {
-    border-bottom: 2px solid white;
-}
