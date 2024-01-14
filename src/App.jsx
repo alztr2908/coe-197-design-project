@@ -1,5 +1,7 @@
 import { useState } from "react";
 import Navbar from "./components/navbar";
+import Footer from "./components/footer";
+
 import "./App.css";
 
 function App() {
@@ -8,8 +10,8 @@ function App() {
       <div className="App">
         <Navbar />
         <div className="display"></div>
+        <Footer />
       </div>
-      <div className="footer"></div>
     </>
   );
 }
