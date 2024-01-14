@@ -4,38 +4,33 @@ nav {
     display: flex;
     justify-content: space-between;
     padding: 0 1.5em;
+    border: 1px solid red
 }
 
 .clock {
     font-size: 2rem;
 }
 
-.nav-display {
-    position: relative; 
-    bottom: 48px; 
-    
-}
-
-.title {
-    top: 100px; 
-}
-  
 ul {
-list-style-type: none;
-margin: 0;
-padding: 0;
-display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding-bottom: 1em;
+    display: flex;
+    position: relative;
+    left: 180px;
+    top: 20px;
 }
 
 li {
-margin-right: 50px;
-text-decoration: none;
-color: white;
-font-weight: bold;
-font-size: 2rem;
-cursor: pointer;
+    margin-right: 150px;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 2.5rem;
+    cursor: pointer;
+    font-weight: 300;
 }
 
 li:hover {
-border-bottom: 2px solid white;
+    border-bottom: 2px solid white;
 }
