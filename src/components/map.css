@@ -64,7 +64,7 @@
 
 .long-fence {
     background-color: #635D5D;
-    width: 60%;
+    width: 75%;
     /* float: bottom; */
     height: 100%;
 }
@@ -86,6 +86,16 @@
     position: absolute;
     bottom: 25px;
     border-top: 10px solid #242424;;
-    border-right: 150px solid #635D5D;
+    border-right: 132px solid #635D5D;
     width: 0;
 }
+
+.oval {
+    position: absolute;
+    top: 38%;
+    left: 52%;
+    width: 100px;
+    height: 250px;
+    background-color: #635D5D;
+    border-radius: 45%;
+  }

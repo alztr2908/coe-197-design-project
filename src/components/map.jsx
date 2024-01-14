@@ -17,7 +17,7 @@ const map = () => {
           <span className="s2"></span>
         </span>
       </div>
-      <span></span>
+      <div className="oval"></div>
     </div>
   );
 };
