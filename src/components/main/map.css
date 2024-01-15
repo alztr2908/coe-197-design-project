@@ -50,8 +50,8 @@
     position: absolute;
     top: 28px;
     right: 0px;
-    border-top: 10px solid red;
-    border-right: 170px solid red;
+    border-top: 10px solid #21c631;
+    border-right: 170px solid #21c631;
 }
 
 .fence {
@@ -70,7 +70,7 @@
 }
 
 .entrance-exit {
-    background-color: red;
+    background-color: #21c631;
     width: 30%;
     height: 50%;
 }
@@ -137,16 +137,14 @@
     border: 1px solid red;
 }
 
+/* border for vertical parking */
 .s1{
     width: 38.8px;
     border: 1px solid yellow;
 }
 
+/* border for horizontal parking */
 .s4{
     height: 38.8px;
     border: 1px solid yellow;
-}
-
-.east-parking h1 {
-    color: white;
 }

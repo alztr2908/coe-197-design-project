@@ -1,6 +1,7 @@
 import "./map.css";
 import { useContext, useState, useEffect } from "react";
 import { SlotContext } from "../../App";
+import ParkingSlot from "./parkingSlot";
 
 const map = () => {
   const slotsArray = useContext(SlotContext);
@@ -40,7 +41,7 @@ const map = () => {
           ? // Render when slots is not null
             slots.map((slot) => {
               return slot.users.map((num, index) => {
-                return <h1 key={num.slotNumber}>{num.slotNumber}</h1>;
+                return <ParkingSlot key={num.slotNumber} num={num} />;
               });
             })
           : null}
