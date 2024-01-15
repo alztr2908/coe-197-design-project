@@ -1,6 +1,6 @@
 import "./map.css";
 import { useContext, useState, useEffect } from "react";
-import { SlotContext } from "../App";
+import { SlotContext } from "../../App";
 
 const map = () => {
   const slotsArray = useContext(SlotContext);
