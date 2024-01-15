@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { createContext, useState, useEffect } from "react";
 import Navbar from "./components/navbar";
 import Footer from "./components/footer";
 import Main from "./pages/main";
@@ -8,8 +8,10 @@ import { ref } from "firebase/database";
 import "./App.css";
 import { onValue } from "firebase/database";
 
+export const SlotContext = createContext();
+
 function App() {
-  const [slot, setSlot] = useState(null);
+  // const [slot, setSlot] = useState(null);
   const [slots, setSlots] = useState([]);
 
   // read
@@ -25,12 +27,14 @@ function App() {
     });
   }, []);
 
-  console.log(slots[0][1]);
+  // console.log(slots[0]);
   return (
     <>
       <div className="App">
         <Navbar />
-        <Main />
+        <SlotContext.Provider value={{ slots }}>
+          <Main />
+        </SlotContext.Provider>
         <Footer />
       </div>
     </>
