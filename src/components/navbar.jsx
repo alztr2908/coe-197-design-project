@@ -17,6 +17,7 @@ const navbar = () => {
         <ul>
           <li>MAP</li>
           <li>OVERALL</li>
+          <li>REQUESTS</li>
         </ul>
       </div>
       <span className="clock">{date.toLocaleTimeString()}</span>
