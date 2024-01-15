@@ -10,7 +10,6 @@ const map = () => {
   // enable map function
   const [condition, setCondition] = useState(false);
 
-  console.log(slots);
   useEffect(() => {
     if (slots.length !== 0) {
       setSlotsArray(slots);
@@ -18,8 +17,8 @@ const map = () => {
     }
   }, [slots]);
 
-  console.log(slots);
-  console.log(slotsArray);
+  // console.log(slots);
+  // console.log(slotsArray);
   return (
     <div className="map-bg">
       <div className="building">
@@ -41,7 +40,6 @@ const map = () => {
         {condition
           ? // Render when slots is not null
             slotsArray.map((slot) => {
-              console.log(slot.users);
               return slot.users.map((num, index) => {
                 return <ParkingSlot key={num.slotNumber} num={num} />;
               });

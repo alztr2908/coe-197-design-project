@@ -1,6 +1,7 @@
-import React from "react";
+import { useSlotContext } from "../../SlotContext";
 
 const parkingSlot = ({ num }) => {
+  const { setSelected } = useSlotContext();
   // CSS design
   const box1 = {
     height: num.isHorizontal ? "38.8px" : "87px",
@@ -19,7 +20,7 @@ const parkingSlot = ({ num }) => {
   };
 
   const clickParking = (val) => {
-    console.log(val);
+    setSelected(val);
   };
 
   return (

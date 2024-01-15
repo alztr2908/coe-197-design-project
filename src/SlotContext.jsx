@@ -7,6 +7,7 @@ const SlotContext = createContext();
 export const SlotContextProvider = ({ children }) => {
   // handle data from api
   const [slots, setSlots] = useState([]);
+  const [selected, setSelected] = useState(null);
 
   // read data from api
   useEffect(() => {
@@ -22,7 +23,9 @@ export const SlotContextProvider = ({ children }) => {
   }, []);
 
   return (
-    <SlotContext.Provider value={{ slots }}>{children}</SlotContext.Provider>
+    <SlotContext.Provider value={{ slots, selected, setSelected }}>
+      {children}
+    </SlotContext.Provider>
   );
 };
 
