@@ -1,10 +1,10 @@
 import "./map.css";
 import { useContext, useState, useEffect } from "react";
-import { SlotContext } from "../../App";
+import { useSlotContext } from "../../SlotContext";
 import ParkingSlot from "./parkingSlot";
 
 const map = () => {
-  const slotsArray = useContext(SlotContext);
+  const slotsArray = useSlotContext();
   const [slots, setSlots] = useState(null);
 
   // enable map function

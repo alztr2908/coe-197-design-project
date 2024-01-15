@@ -10,6 +10,7 @@ const parkingSlot = ({ num }) => {
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
+    cursor: "pointer",
   };
 
   const text = {
@@ -17,9 +18,13 @@ const parkingSlot = ({ num }) => {
     fontWeight: "bold",
   };
 
+  const clickParking = () => {
+    console.log("component clicked!");
+  };
+
   return (
     <>
-      <div style={box1}>
+      <div style={box1} onClick={() => clickParking()}>
         {num.slotNumber <= 9 ? (
           <span style={text}>00{num.slotNumber}</span>
         ) : (
