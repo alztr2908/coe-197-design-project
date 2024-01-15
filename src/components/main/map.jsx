@@ -1,24 +1,25 @@
 import "./map.css";
-import { useContext, useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useSlotContext } from "../../SlotContext";
 import ParkingSlot from "./parkingSlot";
 
 const map = () => {
-  const slotsArray = useSlotContext();
-  const [slots, setSlots] = useState(null);
+  const { slots } = useSlotContext();
+  const [slotsArray, setSlotsArray] = useState(null);
 
   // enable map function
   const [condition, setCondition] = useState(false);
 
+  console.log(slots);
   useEffect(() => {
-    if (slotsArray !== undefined) {
-      setSlots(slotsArray.slots);
+    if (slots.length !== 0) {
+      setSlotsArray(slots);
       setCondition(true);
     }
-  }, [slotsArray]);
+  }, [slots]);
 
-  // console.log(slotsArray.slots);
-  // console.log(slots);
+  console.log(slots);
+  console.log(slotsArray);
   return (
     <div className="map-bg">
       <div className="building">
@@ -39,7 +40,8 @@ const map = () => {
       <div className="east-parking">
         {condition
           ? // Render when slots is not null
-            slots.map((slot) => {
+            slotsArray.map((slot) => {
+              console.log(slot.users);
               return slot.users.map((num, index) => {
                 return <ParkingSlot key={num.slotNumber} num={num} />;
               });

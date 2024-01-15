@@ -18,13 +18,13 @@ const parkingSlot = ({ num }) => {
     fontWeight: "bold",
   };
 
-  const clickParking = () => {
-    console.log("component clicked!");
+  const clickParking = (val) => {
+    console.log(val);
   };
 
   return (
     <>
-      <div style={box1} onClick={() => clickParking()}>
+      <div style={box1} onClick={() => clickParking(num)}>
         {num.slotNumber <= 9 ? (
           <span style={text}>00{num.slotNumber}</span>
         ) : (
