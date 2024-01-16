@@ -35,17 +35,31 @@ const map = () => {
           <div className="db-info">
             <span className="info-title">SLOT: {selected.slotNumber}</span>
 
-            {/* isOccupied */}
+            {/* isOccupied block */}
             {!selected.isOccupied ? (
-              <>
-                <span>Occupied: No</span>
-                <span>Total Charge: 0 </span>
-                <span>Duration of stay: 00 </span>
-                <span>Car Frequency: 00 </span>
-                <span>Time Started: 00 </span>
-              </>
+              <div className="info-info">
+                <div className="info-row">
+                  <span>Duration of stay: 00 </span>
+                  <span>Total Charge: 0 </span>
+                </div>
+                <div className="info-row">
+                  <span>Currently Occupied: No</span>
+                  <span>Car Frequency: {selected.frequencyCars} </span>
+                </div>
+                <span>Time Started: Not Started </span>
+              </div>
             ) : (
-              <span></span>
+              <div className="info-info">
+                <div className="info-row">
+                  <span>Duration of stay: {selected.totalDuration} </span>
+                  <span>Total Charge: {selected.totalCharge} </span>
+                </div>
+                <div className="info-row">
+                  <span>Currently Occupied: Yes</span>
+                  <span>Car Frequency: {selected.frequencyCars} </span>
+                </div>
+                <span>Time Started: {selected.timeStarted} </span>
+              </div>
             )}
           </div>
         ) : (
@@ -57,9 +71,15 @@ const map = () => {
 };
 
 // title
-// duration of stay
-// total charge
+// duration of stay // total charge
 // Occupied //Car Freq
 // time started
+
+// Todo only in order [DELETE THIS]
+// dashboard
+// overall page
+// scale parking slot
+// request page
+// parking slot shortest path
 
 export default map;

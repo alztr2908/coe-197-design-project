@@ -3,11 +3,16 @@ import { useSlotContext } from "../../SlotContext";
 const parkingSlot = ({ num }) => {
   const { setSelected } = useSlotContext();
   // CSS design
+  /*
+    available: #2f8a38
+    not-available: #925c5c
+
+  */
   const box1 = {
     height: num.isHorizontal ? "38.8px" : "87px",
     width: num.isHorizontal ? "87px" : "38.8px",
     border: "2px solid #d9d9d9",
-    backgroundColor: "#925c5c",
+    backgroundColor: num.isOccupied ? "#925c5c" : "#2f8a38",
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
