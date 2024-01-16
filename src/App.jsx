@@ -1,6 +1,6 @@
 import Navbar from "./components/navbar";
 import Footer from "./components/footer";
-import Main from "./pages/main";
+import Display from "./pages/display";
 import "./App.css";
 import { SlotContextProvider } from "./SlotContext";
 
@@ -10,7 +10,7 @@ function App() {
       <div className="App">
         <Navbar />
         <SlotContextProvider>
-          <Main />
+          <Display />
         </SlotContextProvider>
         <Footer />
       </div>

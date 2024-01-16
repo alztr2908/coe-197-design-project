@@ -36,9 +36,9 @@ const map = () => {
   };
 
   const timeToCharge = (seconds) => {
-    if (seconds < 5000) {
+    if (seconds < 3600) {
       setCharge(10);
-    } else if (seconds >= 5001 && seconds <= 10000) {
+    } else if (seconds >= 3601 && seconds <= 10800) {
       setCharge(20);
     } else {
       setCharge(30);
@@ -166,7 +166,8 @@ const map = () => {
 // time started
 
 // Todo only in order [DELETE THIS]
-// dashboard
+// dashboard (DONE)
+// navbar display
 // overall page
 // scale parking slot
 // request page

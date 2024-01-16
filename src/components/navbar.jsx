@@ -1,4 +1,6 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+
 import "./navbar.css";
 const navbar = () => {
   const [date, setDate] = useState(new Date());
@@ -13,11 +15,28 @@ const navbar = () => {
   return (
     <nav>
       <div className="nav-display">
-        <h1 className="title">Smart Parking: Admin</h1>
+        <Link style={{ textDecoration: "none", color: "white" }} to="/">
+          <h1 className="title">Smart Parking: Admin</h1>
+        </Link>
         <ul>
-          <li>MAP</li>
-          <li>OVERALL</li>
-          <li>REQUESTS</li>
+          <li>
+            <Link style={{ textDecoration: "none", color: "white" }} to="/">
+              MAP
+            </Link>
+          </li>
+          <li>
+            <Link style={{ color: "white" }} to="/overall">
+              OVERALL
+            </Link>
+          </li>
+          <li>
+            <Link
+              style={{ textDecoration: "none", color: "white" }}
+              to="/request"
+            >
+              REQUESTS
+            </Link>
+          </li>
         </ul>
       </div>
       <span className="clock">{date.toLocaleTimeString()}</span>
