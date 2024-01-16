@@ -1,7 +1,61 @@
 import { useSlotContext } from "../../SlotContext";
+import { useState, useEffect } from "react";
 import "./dashboard.css";
 const map = () => {
   const { selected } = useSlotContext();
+  const [time, setTime] = useState(new Date());
+  const [elapsedTime, setElapsedTime] = useState(null);
+  const [charge, setCharge] = useState(0);
+
+  useEffect(() => {
+    if (selected !== null) {
+      const timeStarted = new Date(selected.timeStarted);
+
+      // set initial time
+      setTime(timeStarted);
+
+      // Calculate elapsed time immediately
+      updateElapsedTime(timeStarted);
+
+      // Set up interval to update elapsed time every second
+      const intervalId = setInterval(() => {
+        updateElapsedTime(timeStarted);
+      }, 1000);
+
+      // Clean up the interval when the component is unmounted or when 'selected' changes
+      return () => clearInterval(intervalId);
+    }
+  }, [selected]);
+
+  const updateElapsedTime = (startTime) => {
+    const currentTime = new Date();
+    const timeDifference = currentTime - startTime;
+    const seconds = Math.floor(timeDifference / 1000);
+    timeToCharge(seconds);
+    setElapsedTime(seconds);
+  };
+
+  const timeToCharge = (seconds) => {
+    if (seconds < 5000) {
+      setCharge(10);
+    } else if (seconds >= 5001 && seconds <= 10000) {
+      setCharge(20);
+    } else {
+      setCharge(30);
+    }
+  };
+
+  // Time started format
+  const options = {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+    hour: "numeric",
+    minute: "numeric",
+    second: "numeric",
+    hour12: true, // Use 12-hour clock with AM/PM
+  };
+
   return (
     <div className="db-bg">
       <div className="box near-entrance">
@@ -39,26 +93,62 @@ const map = () => {
             {!selected.isOccupied ? (
               <div className="info-info">
                 <div className="info-row">
-                  <span>Duration of stay: 00 </span>
-                  <span>Total Charge: 0 </span>
+                  <div className="info-row-row">
+                    <span>Duration of stay:</span>
+                    <br></br>
+                    <span>0</span>
+                  </div>
+                  <div className="info-row-row">
+                    <span>Total Charge:</span>
+                    <br></br>
+                    <span>₱ {0}</span>
+                  </div>
                 </div>
                 <div className="info-row">
-                  <span>Currently Occupied: No</span>
-                  <span>Car Frequency: {selected.frequencyCars} </span>
+                  <div className="info-row-row">
+                    <span>Currently Occupied:</span>
+                    <br></br>
+                    <span>No</span>
+                  </div>
+                  <div className="info-row-row">
+                    <span>Car Frequency:</span>
+                    <br></br>
+                    <span>{selected.frequencyCars}</span>
+                  </div>
                 </div>
-                <span>Time Started: Not Started </span>
+                <span className="dateStarted">Time Started: Not Started </span>
               </div>
             ) : (
               <div className="info-info">
                 <div className="info-row">
-                  <span>Duration of stay: {selected.totalDuration} </span>
-                  <span>Total Charge: {selected.totalCharge} </span>
+                  <div className="info-row-row">
+                    <span>Duration of stay:</span>
+                    <br></br>
+                    <span>
+                      {elapsedTime !== null ? `${elapsedTime} seconds` : "N/A"}
+                    </span>
+                  </div>
+                  <div className="info-row-row">
+                    <span>Total Charge:</span>
+                    <br></br>
+                    <span>₱ {charge}</span>
+                  </div>
                 </div>
                 <div className="info-row">
-                  <span>Currently Occupied: Yes</span>
-                  <span>Car Frequency: {selected.frequencyCars} </span>
+                  <div className="info-row-row">
+                    <span>Currently Occupied:</span>
+                    <br></br>
+                    <span>Yes</span>
+                  </div>
+                  <div className="info-row-row">
+                    <span>Car Frequency:</span>
+                    <br></br>
+                    <span>{selected.frequencyCars}</span>
+                  </div>
                 </div>
-                <span>Time Started: {selected.timeStarted} </span>
+                <span className="dateStarted">
+                  Time Started: {time.toLocaleString("en-US", options)}{" "}
+                </span>
               </div>
             )}
           </div>
