@@ -33,15 +33,53 @@ const map = () => {
         <span className="short-fence"></span>
       </div>
       <div className="oval"></div>
-      <div className="southwest-parking"></div>
-      <div className="northwest-parking"></div>
-      <div className="west-parking"></div>
+      <div className="southwest-parking">
+        {condition
+          ? // Render when slots is not null
+            slotsArray.map((slot) => {
+              return slot.users.map((num, index) => {
+                return (
+                  index >= 18 &&
+                  index <= 34 && <ParkingSlot key={num.slotNumber} num={num} />
+                );
+              });
+            })
+          : null}
+      </div>
+      <div className="northwest-parking">
+        {condition
+          ? // Render when slots is not null
+            slotsArray.map((slot) => {
+              return slot.users.map((num, index) => {
+                return (
+                  index >= 15 &&
+                  index <= 17 && <ParkingSlot key={num.slotNumber} num={num} />
+                );
+              });
+            })
+          : null}
+      </div>
+      <div className="west-parking">
+        {condition
+          ? // Render when slots is not null
+            slotsArray.map((slot) => {
+              return slot.users.map((num, index) => {
+                return (
+                  index >= 10 &&
+                  index <= 14 && <ParkingSlot key={num.slotNumber} num={num} />
+                );
+              });
+            })
+          : null}
+      </div>
       <div className="east-parking">
         {condition
           ? // Render when slots is not null
             slotsArray.map((slot) => {
               return slot.users.map((num, index) => {
-                return <ParkingSlot key={num.slotNumber} num={num} />;
+                return (
+                  index <= 9 && <ParkingSlot key={num.slotNumber} num={num} />
+                );
               });
             })
           : null}

@@ -167,9 +167,9 @@ const map = () => {
 
 // Todo only in order [DELETE THIS]
 // dashboard (DONE)
-// navbar display
+// navbar display (DONE)
+// scale parking slot (DONE)
 // overall page
-// scale parking slot
 // request page
 // parking slot shortest path
 
