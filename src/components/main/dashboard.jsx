@@ -170,8 +170,8 @@ const map = () => {
 // navbar display (DONE)
 // scale parking slot (DONE)
 // overall page (DONE)
-// parking slot shortest path
 // request page
+// parking slot shortest path
 // Parking Slot button functionality
 
 export default map;

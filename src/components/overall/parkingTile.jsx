@@ -63,8 +63,21 @@ const parkingTile = ({ num }) => {
     textAlign: "center",
   };
 
+  const tileStyle = {
+    marginRight: "20px",
+    fontSize: "0.9rem",
+  };
+
+  const backgroundColorTile = {
+    backgroundColor: num.isOccupied ? "#925c5c" : "#2f8a38",
+    border: "2px solid #AEB117",
+    borderRadius: "5px",
+    color: "rgb(210, 210, 210)",
+    display: "flex",
+  };
+
   return (
-    <>
+    <div style={backgroundColorTile}>
       <div
         style={{
           display: "flex",
@@ -81,7 +94,7 @@ const parkingTile = ({ num }) => {
         </div>
         <div>
           {!num.isOccupied ? (
-            <div style={{ marginRight: "20px", fontSize: "0.9rem" }}>
+            <div style={tileStyle}>
               <span>Total Charge: ₱{charge}</span>
               <br />
               <span>Occupied: No</span>
@@ -91,7 +104,7 @@ const parkingTile = ({ num }) => {
               </span>
             </div>
           ) : (
-            <div style={{ marginRight: "20px", fontSize: "0.9rem" }}>
+            <div style={tileStyle}>
               <span>Total Charge: ₱{charge}</span>
               <br />
               <span>Occupied: Yes</span>
@@ -103,7 +116,7 @@ const parkingTile = ({ num }) => {
           )}
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

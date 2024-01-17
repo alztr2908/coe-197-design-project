@@ -23,12 +23,7 @@ const overall = () => {
         ? // Render when slots is not null
           slotsArray.map((slot) => {
             return slot.users.map((num) => {
-              return (
-                <div key={num.slotNumber} className="oa-box">
-                  {/* {num.slotNumber} */}
-                  <ParkingSlot key={num.slotNumber} num={num} />
-                </div>
-              );
+              return <ParkingSlot key={num.slotNumber} num={num} />;
             });
           })
         : null}
