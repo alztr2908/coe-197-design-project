@@ -6,6 +6,7 @@ const display = () => {
   const displayStyle = {
     width: "1445.61px",
     height: "532.39px",
+    paddingTop: "10px",
     // display: "flex",
     // alignItems: "center",
   };

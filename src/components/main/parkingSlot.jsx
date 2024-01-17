@@ -32,9 +32,9 @@ const parkingSlot = ({ num }) => {
     <>
       <div style={box1} onClick={() => clickParking(num)}>
         {num.slotNumber <= 9 ? (
-          <span style={text}>00{num.slotNumber}</span>
-        ) : (
           <span style={text}>0{num.slotNumber}</span>
+        ) : (
+          <span style={text}>{num.slotNumber}</span>
         )}
       </div>
     </>

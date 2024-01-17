@@ -87,7 +87,14 @@ const map = () => {
       <div className="box slot-info">
         {selected ? (
           <div className="db-info">
-            <span className="info-title">SLOT: {selected.slotNumber}</span>
+            <span className="info-title">
+              SLOT:{" "}
+              {selected.slotNumber < 9 ? (
+                <span>0{selected.slotNumber}</span>
+              ) : (
+                <span>{selected.slotNumber}</span>
+              )}
+            </span>
 
             {/* isOccupied block */}
             {!selected.isOccupied ? (
@@ -170,7 +177,7 @@ const map = () => {
 // navbar display (DONE)
 // scale parking slot (DONE)
 // overall page (DONE)
-// request page frontend
+// request page frontend (DONE)
 // parking slot shortest path
 // request page backend
 // Parking Slot button functionality
