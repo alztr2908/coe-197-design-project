@@ -7,6 +7,7 @@ const outgoing = () => {
     borderRadius: "20px",
     backgroundColor: "#60100B",
     height: "515px",
+    padding: "5px",
   };
 
   const outGrid = {

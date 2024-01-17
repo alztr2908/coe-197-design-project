@@ -8,7 +8,6 @@ const display = () => {
     height: "532.39px",
     // display: "flex",
     // alignItems: "center",
-    border: "1px solid yellow",
   };
 
   return (

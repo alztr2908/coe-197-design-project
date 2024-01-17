@@ -1,6 +1,7 @@
 import React from "react";
 
 const outGoingBox = ({ slot }) => {
+  // once button clicked accept isOccupied = false and other parameter changed
   const outBox = {
     width: "200px",
     height: "100px",
@@ -16,8 +17,6 @@ const outGoingBox = ({ slot }) => {
     fontWeight: "700",
     margin: "0 20px",
   };
-
-  const slotButtons = {};
 
   const acceptButton = {
     width: "90%",

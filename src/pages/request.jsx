@@ -4,7 +4,6 @@ import Outgoing from "../components/request/outgoing";
 const request = () => {
   const reqStyle = {
     display: "flex",
-    margin: "10px",
   };
 
   return (
