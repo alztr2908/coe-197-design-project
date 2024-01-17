@@ -1,0 +1,15 @@
+.overall-bg {
+    display: grid;
+    grid-template-columns: repeat(6,1fr);
+    grid-template-rows: repeat(6,1fr);
+    width: auto;
+    height: 96.5%;
+    gap: 5px;
+}
+
+.oa-box {
+    width: auto;
+    height: auto;
+    border: 2px solid red;
+    border-radius: 5px;
+}

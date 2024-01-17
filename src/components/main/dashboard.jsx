@@ -169,8 +169,9 @@ const map = () => {
 // dashboard (DONE)
 // navbar display (DONE)
 // scale parking slot (DONE)
-// overall page
-// request page
+// overall page (DONE)
 // parking slot shortest path
+// request page
+// Parking Slot button functionality
 
 export default map;
