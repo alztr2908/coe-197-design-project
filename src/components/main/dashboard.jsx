@@ -1,6 +1,8 @@
 import { useSlotContext } from "../../SlotContext";
 import { useState, useEffect } from "react";
 import "./dashboard.css";
+import NearEntrance from "./nearEntrance";
+import NearExit from "./nearExit";
 const map = () => {
   const { selected } = useSlotContext();
   const [time, setTime] = useState(new Date());
@@ -58,32 +60,8 @@ const map = () => {
 
   return (
     <div className="db-bg">
-      <div className="box near-entrance">
-        <span className="db-title">
-          Available Parking Slot near EEE Entrance
-        </span>
-        <div className="db-grid">
-          <div className="grid-item green">001</div>
-          <div className="grid-item green">002</div>
-          <div className="grid-item green">003</div>
-          <div className="grid-item green">004</div>
-          <div className="grid-item green">005</div>
-          <div className="grid-item green">006</div>
-        </div>
-      </div>
-      <div className="box near-exit">
-        <span className="db-title">
-          Available Parking Slot near Parking Entrance
-        </span>
-        <div className="db-grid">
-          <div className="grid-item red">001</div>
-          <div className="grid-item red">002</div>
-          <div className="grid-item red">003</div>
-          <div className="grid-item red">004</div>
-          <div className="grid-item red">005</div>
-          <div className="grid-item red">006</div>
-        </div>
-      </div>
+      <NearEntrance />
+      <NearExit />
       <div className="box slot-info">
         {selected ? (
           <div className="db-info">

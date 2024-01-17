@@ -1,0 +1,26 @@
+.near-entrance {
+    width: 100%;
+    text-align: center;
+    height: 30%;
+}
+
+.entrance-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.entrance-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+}
+
+.entrance-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #1dbd2d;
+}
