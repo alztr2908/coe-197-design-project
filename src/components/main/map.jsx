@@ -22,6 +22,7 @@ const map = () => {
   return (
     <div className="map-bg">
       <div className="building">
+        {/* Building blocks */}
         <div className="rec1"></div>
         <div className="rec2"></div>
         <div className="rec3"></div>
@@ -33,6 +34,10 @@ const map = () => {
         <span className="short-fence"></span>
       </div>
       <div className="oval"></div>
+      <span className="arrow upArrow">↑</span>
+      <span className="arrow downArrow">↓</span>
+      <span className="arrow rightArrow">→</span>
+      <span className="arrow leftArrow">←</span>
       <div className="southwest-parking">
         {condition
           ? // Render when slots is not null
@@ -84,6 +89,7 @@ const map = () => {
             })
           : null}
       </div>
+      {/* Direction to the driveway */}
     </div>
   );
 };
