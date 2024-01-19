@@ -1,7 +1,23 @@
-import React from "react";
+import { useState, useEffect } from "react";
+import { useSlotContext } from "../../SlotContext";
 import OutGoingBox from "./outGoingBox";
 const outgoing = () => {
-  const outGoingSlot = [2, 4, 5, 8, 9];
+  const { slots } = useSlotContext();
+  const [slotsArray, setSlotsArray] = useState(null);
+  const [condition, setCondition] = useState(false);
+
+  useEffect(() => {
+    if (slots.length !== 0) {
+      const filteredSlots = slots[0]
+        .filter((slot) => slot.isOccupied)
+        .sort((a, b) => a.distanceToEntrance - b.distanceToEntrance);
+      setSlotsArray(filteredSlots);
+      setCondition(true);
+    }
+  }, [slots]);
+
+  // console.log(slotsArray);
+
   const outStyle = {
     width: "75%",
     borderRadius: "20px",
@@ -24,9 +40,11 @@ const outgoing = () => {
     <div style={outStyle}>
       <h1>Outgoing</h1>
       <div style={outGrid}>
-        {outGoingSlot.map((slot) => {
-          return <OutGoingBox key={outGoingSlot.indexOf(slot)} slot={slot} />;
-        })}
+        {condition
+          ? slotsArray.map((slot) => {
+              return <OutGoingBox key={slot.slotNumber} slot={slot} />;
+            })
+          : null}
       </div>
     </div>
   );

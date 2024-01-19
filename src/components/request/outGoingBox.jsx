@@ -2,6 +2,7 @@ import React from "react";
 
 const outGoingBox = ({ slot }) => {
   // once button clicked accept isOccupied = false and other parameter changed
+  console.log(slot);
   const outBox = {
     width: "200px",
     height: "100px",
@@ -19,8 +20,8 @@ const outGoingBox = ({ slot }) => {
   };
 
   const acceptButton = {
-    width: "90%",
-    marginBottom: "5px",
+    width: "100%",
+    // marginBottom: "5px",
     backgroundColor: "#2f8a38",
   };
   const declineButton = {
@@ -31,11 +32,15 @@ const outGoingBox = ({ slot }) => {
   return (
     <div style={outBox}>
       <div style={slotStyle}>
-        {slot <= 9 ? <span>0{slot}</span> : <span>{slot}</span>}
+        {slot.slotNumber <= 9 ? (
+          <span>0{slot.slotNumber}</span>
+        ) : (
+          <span>{slot.slotNumber}</span>
+        )}
       </div>
       <div>
-        <button style={acceptButton}>Accept</button>
-        <button style={declineButton}>Decline</button>
+        <button style={acceptButton}>Got it!</button>
+        {/* <button style={declineButton}>Decline</button> */}
       </div>
     </div>
   );
