@@ -65,7 +65,7 @@ const parkingTile = ({ num }) => {
 
   const tileStyle = {
     marginRight: "20px",
-    fontSize: "0.9rem",
+    fontSize: "0.8rem",
   };
 
   const backgroundColorTile = {

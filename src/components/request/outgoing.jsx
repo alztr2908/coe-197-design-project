@@ -22,6 +22,7 @@ const outgoing = () => {
     backgroundColor: "#60100B",
     height: "515px",
     padding: "5px",
+    overflow: "scroll",
   };
 
   const outGrid = {
