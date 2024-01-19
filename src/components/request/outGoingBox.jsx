@@ -29,7 +29,7 @@ const outGoingBox = ({ slot }) => {
     backgroundColor: "#925c5c",
   };
 
-  // Update outgoing by setting isOccupied to false and time started to new Date
+  // Update outgoing by setting isOccupied to false and time started to null
   const updateOutgoing = (val) => {
     const updatedValues = {
       isOccupied: false,
