@@ -16,12 +16,13 @@ const ingoing = () => {
   }, [slots]);
 
   const inStyle = {
-    width: "25%",
+    width: "28%",
     borderRadius: "20px",
     backgroundColor: "#5dbb63",
     height: "515px",
     marginLeft: "10px",
     padding: "5px",
+    overflow: "scroll",
   };
 
   return (
@@ -30,9 +31,7 @@ const ingoing = () => {
       <div>
         {condition
           ? slotsArray.map((slot, index) => {
-              return (
-                index < 4 && <IncomingBox key={slot.slotNumber} slot={slot} />
-              );
+              return <IncomingBox key={slot.slotNumber} slot={slot} />;
             })
           : null}
       </div>
