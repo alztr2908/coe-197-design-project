@@ -17,9 +17,6 @@ const map = () => {
     }
   }, [slots]);
 
-  // console.log(slots);
-  console.log(slotsArray);
-
   return (
     <div className="map-bg">
       <div className="building">

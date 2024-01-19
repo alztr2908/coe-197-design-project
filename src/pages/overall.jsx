@@ -22,7 +22,7 @@ const overall = () => {
       {condition
         ? // Render when slots is not null
           slotsArray.map((slot) => {
-            return slot.users.map((num) => {
+            return slot.map((num) => {
               return <ParkingSlot key={num.slotNumber} num={num} />;
             });
           })

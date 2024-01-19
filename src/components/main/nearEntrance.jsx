@@ -12,7 +12,6 @@ const NearEntrance = () => {
       const filteredSlots = slots[0]
         .filter((slot) => !slot.isOccupied)
         .sort((a, b) => a.distanceToEntrance - b.distanceToEntrance);
-      // console.log(filteredSlots);
       setSlotsArray(filteredSlots);
       setCondition(true);
     }
@@ -29,9 +28,13 @@ const NearEntrance = () => {
               return (
                 index <= 5 &&
                 (slot.slotNumber < 10 ? (
-                  <span class="entrance-item">0{slot.slotNumber}</span>
+                  <span key={slot.slotNumber} className="entrance-item">
+                    0{slot.slotNumber}
+                  </span>
                 ) : (
-                  <span class="entrance-item">{slot.slotNumber}</span>
+                  <span key={slot.slotNumber} className="entrance-item">
+                    {slot.slotNumber}
+                  </span>
                 ))
               );
             })

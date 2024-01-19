@@ -156,7 +156,7 @@ const map = () => {
 // scale parking slot (DONE)
 // overall page (DONE)
 // request page frontend (DONE)
-// parking slot shortest path
+// parking slot shortest path (DONE)
 // request page backend
 // Parking Slot button functionality
 

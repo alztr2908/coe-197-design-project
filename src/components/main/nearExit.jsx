@@ -12,7 +12,6 @@ const nearExit = () => {
       const filteredSlots = slots[0]
         .filter((slot) => !slot.isOccupied)
         .sort((a, b) => a.distanceToExit - b.distanceToExit);
-      // console.log(filteredSlots);
       setSlotsArray(filteredSlots);
       setCondition(true);
     }
@@ -29,9 +28,13 @@ const nearExit = () => {
               return (
                 index <= 5 &&
                 (slot.slotNumber < 10 ? (
-                  <span class="exit-item">0{slot.slotNumber}</span>
+                  <span key={slot.slotNumber} className="exit-item">
+                    0{slot.slotNumber}
+                  </span>
                 ) : (
-                  <span class="exit-item">{slot.slotNumber}</span>
+                  <span key={slot.slotNumber} className="exit-item">
+                    {slot.slotNumber}
+                  </span>
                 ))
               );
             })
