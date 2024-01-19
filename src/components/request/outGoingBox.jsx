@@ -1,4 +1,5 @@
-import React from "react";
+import { db } from "../../firebase";
+import { ref, update } from "firebase/database";
 
 const outGoingBox = ({ slot }) => {
   // once button clicked accept isOccupied = false and other parameter changed
@@ -28,6 +29,19 @@ const outGoingBox = ({ slot }) => {
     backgroundColor: "#925c5c",
   };
 
+  // Update outgoing by setting isOccupied to false and time started to new Date
+  const updateOutgoing = (val) => {
+    const updatedValues = {
+      isOccupied: false,
+      timeStarted: "",
+    };
+
+    // Create a new object that merges the existing val with updatedValues
+    const updatedSlot = { ...val, ...updatedValues };
+
+    update(ref(db, `/users/${val.slotNumber - 1}`), updatedSlot);
+  };
+
   return (
     <div style={outBox}>
       <div style={slotStyle}>
@@ -38,7 +52,9 @@ const outGoingBox = ({ slot }) => {
         )}
       </div>
       <div>
-        <button style={acceptButton}>Got it!</button>
+        <button onClick={() => updateOutgoing(slot)} style={acceptButton}>
+          Got it!
+        </button>
         {/* <button style={declineButton}>Decline</button> */}
       </div>
     </div>

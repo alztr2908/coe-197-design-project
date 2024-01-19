@@ -1,7 +1,6 @@
 import React from "react";
 
 const incomingBox = ({ slot }) => {
-  console.log(slot);
   // once button clicked isOccupied = true
   const inBox = {
     width: "345px",
