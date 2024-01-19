@@ -2,7 +2,6 @@ import React from "react";
 
 const outGoingBox = ({ slot }) => {
   // once button clicked accept isOccupied = false and other parameter changed
-  console.log(slot);
   const outBox = {
     width: "200px",
     height: "100px",

@@ -1,6 +1,7 @@
 import React from "react";
 
 const incomingBox = ({ slot }) => {
+  console.log(slot);
   // once button clicked isOccupied = true
   const inBox = {
     width: "345px",
@@ -30,13 +31,13 @@ const incomingBox = ({ slot }) => {
       <div style={slotStyle}>
         {slot <= 9 ? (
           <span>
-            <span style={{ color: "green" }}>Slot: 0{slot}</span> will be
-            occupied
+            <span style={{ color: "green" }}>Slot: 0{slot.slotNumber}</span>{" "}
+            will be occupied
           </span>
         ) : (
           <span>
-            <span style={{ color: "green" }}>Slot: {slot}</span> will be
-            occupied
+            <span style={{ color: "green" }}>Slot: {slot.slotNumber}</span> will
+            be occupied
           </span>
         )}
       </div>

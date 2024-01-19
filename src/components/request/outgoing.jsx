@@ -8,9 +8,7 @@ const outgoing = () => {
 
   useEffect(() => {
     if (slots.length !== 0) {
-      const filteredSlots = slots[0]
-        .filter((slot) => slot.isOccupied)
-        .sort((a, b) => a.distanceToEntrance - b.distanceToEntrance);
+      const filteredSlots = slots[0].filter((slot) => slot.isOccupied);
       setSlotsArray(filteredSlots);
       setCondition(true);
     }

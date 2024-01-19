@@ -1,8 +1,20 @@
-import React from "react";
+import { useState, useEffect } from "react";
+import { useSlotContext } from "../../SlotContext";
 import IncomingBox from "./incomingBox";
 
 const ingoing = () => {
-  const inGoingSlot = [35, 1, 15, 27];
+  const { slots } = useSlotContext();
+  const [slotsArray, setSlotsArray] = useState(null);
+  const [condition, setCondition] = useState(false);
+
+  useEffect(() => {
+    if (slots.length !== 0) {
+      const filteredSlots = slots[0].filter((slot) => !slot.isOccupied);
+      setSlotsArray(filteredSlots);
+      setCondition(true);
+    }
+  }, [slots]);
+
   const inStyle = {
     width: "25%",
     borderRadius: "20px",
@@ -16,9 +28,13 @@ const ingoing = () => {
     <div style={inStyle}>
       <h1>Incoming</h1>
       <div>
-        {inGoingSlot.map((slot) => {
-          return <IncomingBox key={inGoingSlot.indexOf(slot)} slot={slot} />;
-        })}
+        {condition
+          ? slotsArray.map((slot, index) => {
+              return (
+                index < 4 && <IncomingBox key={slot.slotNumber} slot={slot} />
+              );
+            })
+          : null}
       </div>
     </div>
   );
