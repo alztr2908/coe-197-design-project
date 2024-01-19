@@ -18,7 +18,8 @@ const map = () => {
   }, [slots]);
 
   // console.log(slots);
-  // console.log(slotsArray);
+  console.log(slotsArray);
+
   return (
     <div className="map-bg">
       <div className="building">
@@ -42,7 +43,7 @@ const map = () => {
         {condition
           ? // Render when slots is not null
             slotsArray.map((slot) => {
-              return slot.users.map((num, index) => {
+              return slot.map((num, index) => {
                 return (
                   index >= 18 &&
                   index <= 34 && <ParkingSlot key={num.slotNumber} num={num} />
@@ -55,7 +56,7 @@ const map = () => {
         {condition
           ? // Render when slots is not null
             slotsArray.map((slot) => {
-              return slot.users.map((num, index) => {
+              return slot.map((num, index) => {
                 return (
                   index >= 15 &&
                   index <= 17 && <ParkingSlot key={num.slotNumber} num={num} />
@@ -68,7 +69,7 @@ const map = () => {
         {condition
           ? // Render when slots is not null
             slotsArray.map((slot) => {
-              return slot.users.map((num, index) => {
+              return slot.map((num, index) => {
                 return (
                   index >= 10 &&
                   index <= 14 && <ParkingSlot key={num.slotNumber} num={num} />
@@ -81,7 +82,7 @@ const map = () => {
         {condition
           ? // Render when slots is not null
             slotsArray.map((slot) => {
-              return slot.users.map((num, index) => {
+              return slot.map((num, index) => {
                 return (
                   index <= 9 && <ParkingSlot key={num.slotNumber} num={num} />
                 );
